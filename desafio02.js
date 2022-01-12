@@ -18,11 +18,18 @@ function recursiva(number) {
   }
 }
 
+function recursiveChunks(num) {
+  if (num === 0) return "";
+  return num === 1 ? "chunk" : "chunk-" + recursiveChunks(num - 1);
+}
+
 function chirp(n) {
   if (n < 1 || isNaN(n)) return;
   return n < 2 ? "chirp" : chirp(n - 1) + "-chirp";
 }
 
 console.log(recursiva(3));
+
+console.log(recursiveChunks(3));
 
 console.log(chirp(3));
